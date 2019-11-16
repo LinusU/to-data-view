@@ -1,5 +1,5 @@
 module.exports = function toDataView (data) {
-  if (data instanceof Uint8Array) {
+  if (data instanceof Int8Array || data instanceof Uint8Array || data instanceof Uint8ClampedArray) {
     return new DataView(data.buffer, data.byteOffset, data.byteLength)
   }
 
@@ -7,5 +7,5 @@ module.exports = function toDataView (data) {
     return new DataView(data)
   }
 
-  throw new TypeError('Expected `data` to be an ArrayBuffer or Uint8Array')
+  throw new TypeError('Expected `data` to be an ArrayBuffer, Buffer, Int8Array, Uint8Array or Uint8ClampedArray')
 }
