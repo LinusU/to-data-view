@@ -31,6 +31,9 @@ function awesomeParser (source) {
 
 ## API
 
-### `toDataView(data: ArrayBuffer | Buffer | Int8Array | Uint8Array | Uint8ClampedArray): DataView`
+### `toDataView(data)`
+
+- `data` (`ArrayBuffer | Int8Array | Uint8Array | Uint8ClampedArray`, required)
+- returns `DataView`
 
 Return a `DataView` instance that uses the same memory as the provided `ArrayBuffer`, 8-bit typed array or `Buffer`.
