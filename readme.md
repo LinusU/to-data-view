@@ -19,7 +19,7 @@ npm install --save to-data-view
 ## Usage
 
 ```js
-const toDataView = require('to-data-view')
+import toDataView from 'to-data-view'
 
 // This function will accept both `ArrayBuffer` and `Buffer` as input
 function awesomeParser (source) {
