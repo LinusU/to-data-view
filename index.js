@@ -1,4 +1,4 @@
-module.exports = function toDataView (data) {
+export default function toDataView (data) {
   if (data instanceof Int8Array || data instanceof Uint8Array || data instanceof Uint8ClampedArray) {
     return new DataView(data.buffer, data.byteOffset, data.byteLength)
   }

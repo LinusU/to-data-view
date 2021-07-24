@@ -1,5 +1,5 @@
-const assert = require('assert')
-const toDataView = require('./')
+import assert from 'node:assert'
+import toDataView from './index.js'
 
 assert(toDataView(Buffer.from('test')) instanceof DataView)
 assert(toDataView(new ArrayBuffer(10)) instanceof DataView)
