@@ -5,10 +5,7 @@ Create a `DataView` over an `ArrayBuffer`/8-bit typed array (commonly used in th
 Supported inputs:
 
 - [`ArrayBuffer`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
-- [`Buffer`](https://nodejs.org/docs/latest/api/buffer.html#buffer_class_buffer)
-- [`Int8Array`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Int8Array)
-- [`Uint8Array`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
-- [`Uint8ClampedArray`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray)
+- [`ArrayBufferView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray)
 
 ## Installation
 
@@ -21,7 +18,7 @@ npm install --save to-data-view
 ```js
 import toDataView from 'to-data-view'
 
-// This function will accept both `ArrayBuffer` and `Buffer` as input
+// This function will accept `ArrayBuffer` or any typed array
 function awesomeParser (source) {
   const view = toDataView(source)
 
@@ -33,7 +30,7 @@ function awesomeParser (source) {
 
 ### `toDataView(data)`
 
-- `data` (`ArrayBuffer | Int8Array | Uint8Array | Uint8ClampedArray`, required)
+- `data` (`ArrayBuffer | ArrayBufferView`, required)
 - returns `DataView`
 
-Return a `DataView` instance that uses the same memory as the provided `ArrayBuffer`, 8-bit typed array or `Buffer`.
+Return a `DataView` instance that uses the same memory as the provided `ArrayBuffer`, or `ArrayBufferView`.
