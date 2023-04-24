@@ -3,7 +3,7 @@ export default function toDataView (data) {
     return new DataView(data.buffer, data.byteOffset, data.byteLength)
   }
 
-  if (data instanceof ArrayBuffer) {
+  if (data instanceof ArrayBuffer || Object.prototype.toString.call(data) === '[object ArrayBuffer]') {
     return new DataView(data)
   }
 
